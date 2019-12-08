@@ -1,0 +1,8 @@
+nose
+nose-progressive
+nose-exclude
+pytest
+coverage
+coveralls
+matplotlib
+watermark
