@@ -18,7 +18,7 @@ If your development requires using jupyter notebooks/lab then your workflow woul
 
 ```
 git clone git@github.com:pysal/pysal.git # (Or, clone your fork)
-cd pysal`
+cd pysal
 docker run -it --rm  -p 8888:8888 -v ${PWD}:/home/jovyan sjsrey/pysaldev:2.3 sh -c "python setup.py && /bin/bash"
 ```
 
@@ -45,8 +45,3 @@ docker rm $(docker -ps -aq)
 docker rmi $(docker images -q) --force
 
 ```
-
-
-
-
-
