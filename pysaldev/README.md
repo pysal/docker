@@ -3,25 +3,29 @@
 This serves as the base image for common build, testing, and documentation of packages in the [PySAL ecosystem](http://pysal.org).
 
 
-## Usage
 
-### Using the image for PySAL development
+## Using the image for PySAL development
 
-1. `git clone git@github.com:pysal/pysal.git` (Or, clone your fork)
-2. `cd pysal`
-3. `docker run -it --rm   -v ${PWD}:/home/jovyan sjsrey/pysaldev:2.3 sh -c "python setup.py develop && /bin/bash"`
+```
+git clone git@github.com:pysal/pysal.git  # (Or, clone your fork)
+cd pysal
+docker run -it --rm   -v ${PWD}:/home/jovyan sjsrey/pysaldev:2.3 sh -c "python setup.py develop && /bin/bash"
+```
 
 This will mount the host current working directory at the home directory of the container. You can use host tooling (editor) to work on the source code. Any changes made during a container run will be preserved on the host.
 
 If your development requires using jupyter notebooks/lab then your workflow would be:
 
-1. `git clone git@github.com:pysal/pysal.git` (Or, clone your fork)
-2. `cd pysal`
-1. 	docker run -it --rm  -p 8888:8888 -v ${PWD}:/home/jovyan sjsrey/pysaldev:2.3 sh -c "python setup.py && /bin/bash"
-1. At the shell in the container enter: `jupyter notebook` 1. From the shell copy the url with the token and paste into a browser on the host. The url should look something like ` http://127.0.0.1:8888/?token=f1e8a4cf0487a8bc728b12f530c30a7d52449632d662c4ee`
+```
+git clone git@github.com:pysal/pysal.git # (Or, clone your fork)
+cd pysal`
+docker run -it --rm  -p 8888:8888 -v ${PWD}:/home/jovyan sjsrey/pysaldev:2.3 sh -c "python setup.py && /bin/bash"
+```
+
+At the shell in the container enter: `jupyter notebook` From the shell copy the url with the token and paste into a browser on the host. The url should look something like ` http://127.0.0.1:8888/?token=f1e8a4cf0487a8bc728b12f530c30a7d52449632d662c4ee`
 
 
-### Building the image
+## Building the image
 
 `docker build -t sjsrey/pysaldev .`
 
