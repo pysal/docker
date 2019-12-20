@@ -17,6 +17,7 @@ ADD requirements_tests.txt requirements_tests.txt
 RUN conda install --file requirements_tests.txt
 ADD requirements_plus_pip.txt requirements_plus_pip.txt
 RUN pip install -r requirements_plus_pip.txt
+RUN pip install -U pyproj==2.3.1
 
 #---- Jupyter config ----
 
